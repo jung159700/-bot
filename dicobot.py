@@ -1,9 +1,13 @@
 import discord, asyncio, random
-import os
-
 
 client = discord.Client()
 
+@client.event
+async def on_ready():
+    print(client.user.id)
+    print("ready")
+    game = discord.Game("나 대신 있는 봇")
+    await client.change_presence(status=discord.Status.online, activity=game)
 
 @client.event
 async def on_message(meassage):
@@ -57,5 +61,5 @@ async def on_message(meassage):
 
 
 
-access_token = os.environ["BOT_TEKEN"]
-client.run(access_tken)
+
+client.run("ODI3OTgzODYyMDEzMjMxMTI2.YGi-Dw.9sx6lZgt-oWHVp1O9Hu-FGTjPDw")
